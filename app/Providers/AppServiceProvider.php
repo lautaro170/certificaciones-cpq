@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        //the file is in resources -> js -> ajax-download.js
+        FilamentAsset::register([
+
+            Js::make('ajax-download', 'js/ajax-download.js' ),
+        ]);
+
     }
 }
